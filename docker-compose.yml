@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  db:
+    container_name: db
+    image: mysql
+    restart: always
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: products
+        MYSQL_USER: admin
+        MYSQL_PASSWORD: admin
+    ports:
+        - "9906:3306"
+
+  web:
+    build: ./web
+    volumes: 
+      - ./web/src/:/var/www/html/
+    ports: 
+      - 5001:80

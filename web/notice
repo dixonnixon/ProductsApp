@@ -1,0 +1,19 @@
+1. docker run -p <host_port>:<container_port> <image_name>
+2. docker run -p <host_port>:<container_port> <image_name>
+     docker run -p 8080:80 -v  /j/Code/php/docker/src/:/var/www/html/ hello-php
+
+
+000ProductPass: q7&EDk%WX!cO%Awowzom
+DBooowevhos: admin
+     er~nfdsL-0[O|1aB    
+
+
+
+
+CREATE TABLE `products` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `sku` varchar(45) DEFAULT NULL,
+  `price` decimal(8,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `sku_UNIQUE` (`sku`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
