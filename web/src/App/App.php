@@ -11,6 +11,7 @@ class L1
     {
         $this->cmd = $cmd;
         $this->type = $type;
+        // var_dump($type);
     }
 
     protected function par($params) 
@@ -20,9 +21,9 @@ class L1
         // if(is_object)
     }
 
-    function parse($par)
+    function parse($params)
     {
-        $this->par($par);
+        $this->par($params);
         $this->cmd->execute($this->method, $this->params);
         return $this->cmd->results();
     }
@@ -43,10 +44,14 @@ class App
 
     protected function chooseCommand() { //setDefaultCommand
         //I think this is not a productType)
+
+        if(empty($this->req->get("cmd")))
+        {
+            return new \Core\Products();
+        }
         $cmd = "Core\\" . ucFirst($this->req->get("cmd"));
         // var_dump($cmd, (!$cmd) );
-        if(!$cmd) 
-        { return new Core\Products(); }
+        
         return new $cmd();
     }
 

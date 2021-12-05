@@ -22,9 +22,9 @@ class Request {
         return array();
     }
 
-    private function factory()
+    function getParameters()
     {
-        // $
+        return $this->get("par");
     }
 
     public function get($name) 

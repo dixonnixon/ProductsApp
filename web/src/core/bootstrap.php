@@ -1,11 +1,5 @@
 <?php
 require __DIR__ . "./../sys/Psr4AutoloaderClass.php";
-// echo "<pre>";
-
-
-
-
-
 
 
 $loader = new Psr4AutoloaderClass();

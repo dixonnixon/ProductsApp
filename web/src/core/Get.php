@@ -2,15 +2,13 @@
 namespace Core;
 
 
-class Get 
+class Get extends Receiver
 {
     private $methods = [];
 
-    function __construct($req)
+    function methods(): void
     {
         $reflection = new \ReflectionClass(Retrieve::class);
-
-        $methods = $reflection->getMethods();
 
         // var_dump("<pre><b>");
         // var_dump("par", $req->get("par"));
@@ -29,10 +27,8 @@ class Get
     //logic of parsing parameters encapsulated here
     function specify(Array $params)
     {
-       
-        // var_dump("Retrieve methods", $this->methods, !$params[0],
-        //     is_numeric($params[0]), $params);
         $result = null;
+
         if(!$params[0])
         {
             $result = [$this->methods[0], []];
@@ -43,14 +39,12 @@ class Get
             $result =  [$this->methods[1], $params];
         }
 
-        //let findAll Products by Default
+        
         if(!$result)
         {
             throw new \Exception("no valid parameters passed {$params[0]}");
         }
 
-
-        // var_dump("result", $result);
         return $result;
     }
 }

@@ -28,27 +28,6 @@ class ProductsModel implements Repo
   
     public function findById($id): Product
     {
-        // var_dump("findById", $id);
-        // $sth = $this->ds->prepare('SELECT *
-        //     FROM products
-        //     WHERE id = :id');
-
-        // // $sth->setFetchMode(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, 
-        // //     'Product',["id", "sku", "price"]);
-        // $sth->execute([':id' => $id]);
-
-        
-        // if($sth->rowCount() === 0) {
-        //     return new Product("", "", "");
-        // }
-        // $product = $sth->fetchObject(//'App\\Product', //::class, 
-        //     // ["id", "sku", "price"]
-        //     '\\App\\Product'
-        // );
-        // var_dump("product", $product);
-        // $sth->closeCursor();
-        // return $product;
-
         $sth = $this->ds->prepare('SELECT *
             FROM products
             WHERE id = :id');

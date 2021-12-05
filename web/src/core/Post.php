@@ -1,15 +1,15 @@
 <?php
 namespace Core;
 
-class Post
+class Post extends Receiver
 {
     private $methods = [];
 
-    function __construct($req)
+    function methods(): void
     {
+
         $reflection = new \ReflectionClass(Upload::class);
 
-        $methods = $reflection->getMethods();
         array_map([$this, 'setMethod'],
             $reflection->getMethods());
     }
